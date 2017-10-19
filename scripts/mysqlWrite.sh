@@ -24,7 +24,7 @@ do
 		returnLength=$(echo -n $fb | wc -c)
 		if [ $returnLength -eq 0 ]; then
 			echo "creating new table $sqlTableName"
-			fb=$(echo "CREATE TABLE $sqlTableName (alarmState VARCHAR(3), tcTemp VARCHAR(10), inTemp VARCHAR(10), errorBit0 VARCHAR(2), errorBit1 VARCHAR(5), time  TIMESTAMP DEFAULT CURRENT_TIMESTAMP)" | mysql -h$sqlIP -u$sqlUsername $sqlDBName -p$sqlPassword)
+			fb=$(echo "CREATE TABLE $sqlTableName (alarmState TINYINT, tcTemp FLOAT, inTemp FLOAT, errorBit0 VARCHAR(2), errorBit1 VARCHAR(5), time  TIMESTAMP DEFAULT CURRENT_TIMESTAMP)" | mysql -h$sqlIP -u$sqlUsername $sqlDBName -p$sqlPassword)
 		fi
 
 		#load latest alarm and temp from tmp files:

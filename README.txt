@@ -8,3 +8,21 @@ Usage:
 - Reboot the system.
 
 You can now use the FROST-configManager software to configurate all settings (using GUI) over the network.
+
+
+MAX31855 hardware:
+--> default pinout can be found in the readMAX31855.sh file:
+	# set input output mode of gpio pins:
+		gpio mode 9 out #3.3V vcc output
+		gpio mode 0 in # DO / MISO
+		gpio mode 2 out # CS
+		gpio mode 3 out # CLK
+
+AlarmSocket hardware:
+--> default pinout for the alarmsocket kan be found in the readAlarmSocket.sh file:
+	# set gpio pins:
+		gpio mode 15 out
+		gpio mode 24 in
+	
+--> wiringOP has to be installed before using gpio command!!!
+--> wiringOP uses different PIN NUMMERS, use gpio readall to find them.
